@@ -16,13 +16,13 @@ export default function App() {
     const email = form.current.user_email.value.trim();
     const message = form.current.message.value.trim();
 
-    // Basic empty check
+    // Check for empty fields
     if (!name || !email || !message) {
       toast.error("⚠️ Please fill out all fields.");
       return;
     }
 
-    // Basic email format check (simple regex)
+    // Validate email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       toast.error("🚫 Please enter a valid email address.");
@@ -30,10 +30,10 @@ export default function App() {
     }
 
     emailjs.sendForm(
-      'service_t4fswdi',
-      'template_lqzfmh5',
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
       form.current,
-      'rub54SZDRBc9nivPO'
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
     ).then(
       () => {
         toast.success('✅ Message sent successfully!');
