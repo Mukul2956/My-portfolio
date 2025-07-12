@@ -1,4 +1,4 @@
-# 🚀 My Portfolio
+# My Portfolio
 
 Hey there! 👋  
 This is my personal developer portfolio built with **React**, **Tailwind CSS**, **Framer Motion**, and **EmailJS**.  
