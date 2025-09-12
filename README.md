@@ -1,13 +1,17 @@
 
 
+
 <div align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&pause=1000&color=915EFF&center=true&vCenter=true&width=900&lines=Welcome+to+Mukul's+Portfolio!;3D+Visuals+%7C+Modern+UI+%7C+Next.js+Magic" alt="Typing SVG" />
   
   <h1>🚀 My Portfolio 🚀</h1>
   <p>
-	 <a href="https://github.com/Mukul2956/My-portfolio"><img src="https://img.shields.io/github/stars/Mukul2956/My-portfolio?style=social" alt="GitHub stars"/></a>
-	 <a href="https://github.com/Mukul2956"><img src="https://img.shields.io/github/followers/Mukul2956?label=Follow&style=social" alt="GitHub followers"/></a>
-	 <a href="https://vercel.com/"><img src="https://img.shields.io/badge/Deployed%20on-Vercel-black?logo=vercel" alt="Vercel"/></a>
+    <a href="https://github.com/Mukul2956/My-portfolio"><img src="https://img.shields.io/github/stars/Mukul2956/My-portfolio?style=social" alt="GitHub stars"/></a>
+    <a href="https://github.com/Mukul2956"><img src="https://img.shields.io/github/followers/Mukul2956?label=Follow&style=social" alt="GitHub followers"/></a>
+    <a href="https://vercel.com/"><img src="https://img.shields.io/badge/Deployed%20on-Vercel-black?logo=vercel" alt="Vercel"/></a>
+  </p>
+  <p>
+    <b>🌐 Live Portfolio:</b> <a href="https://my-portfolio-sooty-seven-22.vercel.app">https://my-portfolio-sooty-seven-22.vercel.app</a>
   </p>
 </div>
 
