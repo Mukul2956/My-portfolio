@@ -1,7 +1,7 @@
 
 
 <div align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&pause=1000&color=915EFF&center=true&vCenter=true&width=600&lines=Welcome+to+Mukul's+Portfolio!;3D+Visuals+%7C+Modern+UI+%7C+Next.js+Magic" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&pause=1000&color=915EFF&center=true&vCenter=true&width=900&lines=Welcome+to+Mukul's+Portfolio!;3D+Visuals+%7C+Modern+UI+%7C+Next.js+Magic" alt="Typing SVG" />
   
   <h1>🚀 My Portfolio 🚀</h1>
   <p>
