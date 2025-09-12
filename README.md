@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+# My Portfolio
+
+A modern, interactive portfolio built with Next.js, React Three Fiber, Tailwind CSS, and Framer Motion. Showcases 3D visuals, animated backgrounds, projects, skills, and a contact form powered by EmailJS.
+
+## Features
+- 3D computer model (rotatable)
+- Animated backgrounds: stars, glassmorphism blobs, gradient waves
+- Responsive design for all devices
+- Projects section with images and effects
+- Skills and experience sections
+- Downloadable resume (Google Drive link)
+- Contact form with EmailJS integration
+- Smooth section transitions and motion effects
+- Dark mode support
+
+## Tech Stack
+- Next.js
+- React & React Three Fiber
+- Drei
+- Tailwind CSS
+- Framer Motion
+- EmailJS
 
 ## Getting Started
 
-First, run the development server:
+1. **Clone the repo:**
+	```
+	git clone https://github.com/Mukul2956/My-portfolio.git
+	cd My-portfolio
+	```
+2. **Install dependencies:**
+	```
+	npm install
+	```
+3. **Run the development server:**
+	```
+	npm run dev
+	```
+4. **Open in browser:**
+	Visit `http://localhost:3000`
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Customization
+- Update your resume link in `src/components/Skills.jsx`
+- Add/edit projects in `src/components/Projects.jsx`
+- Change skills in `src/components/Skills.jsx`
+- Modify animated backgrounds in `src/components/StarsCanvas.jsx`, `GlassBlobsCanvas.jsx`, or `GradientWavesCanvas.jsx`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Deployment
+You can deploy this portfolio to Vercel, Netlify, or any static hosting provider that supports Next.js.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## License
+This project is open source and available under the MIT License.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Feel free to fork, customize, and share your own portfolio!
