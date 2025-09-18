@@ -27,8 +27,11 @@ const Computers = ({ isMobile }) => {
   );
 };
 
+
 const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [enableRotate, setEnableRotate] = useState(true);
+  const touchInfo = React.useRef({ x: 0, y: 0, isHorizontal: false });
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 500px)");
@@ -42,50 +45,63 @@ const ComputersCanvas = () => {
     };
   }, []);
 
+  // Custom touch handlers for mobile
+  const handleTouchStart = (e) => {
+    if (!isMobile) return;
+    const touch = e.touches[0];
+    touchInfo.current = { x: touch.clientX, y: touch.clientY, isHorizontal: false };
+    setEnableRotate(false); // Disable rotation until we know it's a horizontal drag
+  };
+
+  const handleTouchMove = (e) => {
+    if (!isMobile) return;
+    const touch = e.touches[0];
+    const dx = Math.abs(touch.clientX - touchInfo.current.x);
+    const dy = Math.abs(touch.clientY - touchInfo.current.y);
+    // If horizontal drag is greater, enable rotation; else, keep disabled
+    if (!touchInfo.current.isHorizontal && (dx > 10 || dy > 10)) {
+      if (dx > dy) {
+        touchInfo.current.isHorizontal = true;
+        setEnableRotate(true);
+      } else {
+        setEnableRotate(false);
+      }
+    }
+  };
+
+  const handleTouchEnd = () => {
+    if (!isMobile) return;
+    setEnableRotate(true); // Reset after gesture ends
+  };
+
   return (
-    <Canvas
-      frameloop="demand"
-      shadows
-      dpr={[1, 2]}
-      camera={{ position: [20, 3, 5], fov: 25 }}
-      gl={{ preserveDrawingBuffer: true }}
-      style={{ height: "100vh" }}
+    <div
+      style={{ height: "100vh", touchAction: isMobile ? "pan-y" : "auto" }}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
     >
-      <Suspense fallback={null}>
-        <OrbitControls
-          enableZoom={false}
-          maxPolarAngle={Math.PI / 2}
-          minPolarAngle={Math.PI / 2}
-          enablePan={false}
-          {...(isMobile && {
-            enableRotate: true,
-            // Only allow horizontal (azimuthal) rotation on mobile
-            minAzimuthAngle: -Infinity,
-            maxAzimuthAngle: Infinity,
-            minPolarAngle: Math.PI / 2,
-            maxPolarAngle: Math.PI / 2,
-            // Custom touch event handler to only rotate on horizontal drag
-            onTouchStart: (e) => {
-              e.target.dataset.startY = e.touches[0].clientY;
-              e.target.dataset.startX = e.touches[0].clientX;
-            },
-            onTouchMove: (e) => {
-              const startY = Number(e.target.dataset.startY);
-              const startX = Number(e.target.dataset.startX);
-              const deltaY = Math.abs(e.touches[0].clientY - startY);
-              const deltaX = Math.abs(e.touches[0].clientX - startX);
-              // If vertical movement is greater, let the page scroll
-              if (deltaY > deltaX) {
-                e.stopPropagation();
-                e.preventDefault();
-              }
-            },
-          })}
-        />
-        <Computers isMobile={isMobile} />
-      </Suspense>
-      <Preload all />
-    </Canvas>
+      <Canvas
+        frameloop="demand"
+        shadows
+        dpr={[1, 2]}
+        camera={{ position: [20, 3, 5], fov: 25 }}
+        gl={{ preserveDrawingBuffer: true }}
+        style={{ height: "100vh" }}
+      >
+        <Suspense fallback={null}>
+          <OrbitControls
+            enableZoom={false}
+            maxPolarAngle={Math.PI / 2}
+            minPolarAngle={Math.PI / 2}
+            enablePan={false}
+            enableRotate={enableRotate}
+          />
+          <Computers isMobile={isMobile} />
+        </Suspense>
+        <Preload all />
+      </Canvas>
+    </div>
   );
 };
 
