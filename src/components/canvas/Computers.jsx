@@ -52,7 +52,36 @@ const ComputersCanvas = () => {
       style={{ height: "100vh" }}
     >
       <Suspense fallback={null}>
-        <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} minPolarAngle={Math.PI / 2} />
+        <OrbitControls
+          enableZoom={false}
+          maxPolarAngle={Math.PI / 2}
+          minPolarAngle={Math.PI / 2}
+          enablePan={false}
+          {...(isMobile && {
+            enableRotate: true,
+            // Only allow horizontal (azimuthal) rotation on mobile
+            minAzimuthAngle: -Infinity,
+            maxAzimuthAngle: Infinity,
+            minPolarAngle: Math.PI / 2,
+            maxPolarAngle: Math.PI / 2,
+            // Custom touch event handler to only rotate on horizontal drag
+            onTouchStart: (e) => {
+              e.target.dataset.startY = e.touches[0].clientY;
+              e.target.dataset.startX = e.touches[0].clientX;
+            },
+            onTouchMove: (e) => {
+              const startY = Number(e.target.dataset.startY);
+              const startX = Number(e.target.dataset.startX);
+              const deltaY = Math.abs(e.touches[0].clientY - startY);
+              const deltaX = Math.abs(e.touches[0].clientX - startX);
+              // If vertical movement is greater, let the page scroll
+              if (deltaY > deltaX) {
+                e.stopPropagation();
+                e.preventDefault();
+              }
+            },
+          })}
+        />
         <Computers isMobile={isMobile} />
       </Suspense>
       <Preload all />
