@@ -76,10 +76,17 @@ const ComputersCanvas = () => {
 
   return (
     <div
-      style={{ height: "100vh", touchAction: isMobile ? "pan-y" : "auto" }}
-      onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}
+      style={{
+        height: isMobile ? "350px" : "100vh",
+        maxWidth: isMobile ? "100vw" : "100vw",
+        margin: "0 auto",
+        touchAction: isMobile ? "pan-y" : "auto",
+        position: "relative",
+        zIndex: 0,
+      }}
+      onTouchStart={isMobile ? handleTouchStart : undefined}
+      onTouchMove={isMobile ? handleTouchMove : undefined}
+      onTouchEnd={isMobile ? handleTouchEnd : undefined}
     >
       <Canvas
         frameloop="demand"
@@ -87,7 +94,7 @@ const ComputersCanvas = () => {
         dpr={[1, 2]}
         camera={{ position: [20, 3, 5], fov: 25 }}
         gl={{ preserveDrawingBuffer: true }}
-        style={{ height: "100vh" }}
+        style={{ height: isMobile ? "350px" : "100vh", width: "100%" }}
       >
         <Suspense fallback={null}>
           <OrbitControls
@@ -95,7 +102,7 @@ const ComputersCanvas = () => {
             maxPolarAngle={Math.PI / 2}
             minPolarAngle={Math.PI / 2}
             enablePan={false}
-            enableRotate={enableRotate}
+            enableRotate={isMobile ? enableRotate : true}
           />
           <Computers isMobile={isMobile} />
         </Suspense>
