@@ -2,26 +2,32 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
-    name: "FactSense",
-    description: "A fake news detection web app using machine learning and NLP techniques to classify news articles as real or fake.",
-    tags: ["react", "ml", "nlp", "webapp"],
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80",
-    source_code_link: "https://github.com/Mukul2956/FactSense"
+    name: "CareerPilot",
+    description:
+      "An AI-powered career guidance platform that analyzes a user’s skills, interests, and academic profile to recommend personalized career paths, courses, and job roles.",
+    tags: ["ai", "llm", "career-recommendation", "webapp"],
+    image:
+      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80",
+    source_code_link: "https://github.com/Mukul2956/CareerPilot",
   },
   {
-    name: "NetClone",
-    description: "A Netflix clone web app built with React and Firebase, featuring authentication and movie browsing.",
-    tags: ["react", "firebase", "clone"],
-    image: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80",
-    source_code_link: "https://github.com/Mukul2956/Net-Clone"
+    name: "DocBot",
+    description:
+      "A document-intelligence chatbot that understands, extracts, and answers questions from uploaded PDFs, research papers, and text files using large language models.",
+    tags: ["llm", "rag", "document-qa", "chatbot"],
+    image:
+      "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80",
+    source_code_link: "https://github.com/Mukul2956/Doc-Bot",
   },
   {
-    name: "MovieGround",
-    description: "A movie recommender system using machine learning and content-based filtering.",
-    tags: ["python", "ml", "recommendation"],
-    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80",
-    source_code_link: "https://github.com/Mukul2956/Movie-Recommender-System-ML"
-  }
+    name: "Rubric-ai",
+    description:
+      "An automated rubric-based evaluation system that grades student answers using NLP and provides detailed feedback, scores, and improvement suggestions — ensuring fair, scalable academic assessment.",
+    tags: ["nlp", "rubric-grading", "edtech", "ai-evaluation"],
+    image:
+      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80",
+    source_code_link: "https://github.com/Mukul2956/Rubric-AI",
+  },
 ];
 
 const Projects = () => {
