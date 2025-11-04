@@ -34,7 +34,7 @@ const Skills = () => {
             </motion.div>
           ))}
         </div>
-  <a href="https://drive.google.com/file/d/1CB723P1pt873FPuLcBhNfmY3zbPPfq7u/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="inline-block px-6 py-3 bg-[#915EFF] text-white font-bold rounded-lg shadow hover:bg-[#7a3fdc] transition">Download Resume</a>
+  <a href="https://drive.google.com/file/d/1KX4HJ-9_xE3rXznFKHrD2JpeVqEYvQm6/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="inline-block px-6 py-3 bg-[#915EFF] text-white font-bold rounded-lg shadow hover:bg-[#7a3fdc] transition">Download Resume</a>
       </motion.div>
     </section>
   );
